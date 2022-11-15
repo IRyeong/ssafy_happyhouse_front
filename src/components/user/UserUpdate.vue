@@ -1,10 +1,7 @@
-<template></template>
+<template lang="">
+  <div></div>
+</template>
 <script>
-import {} from "vuex";
-export default {
-  name: "UserUpdate",
-  methods: {},
-  computed: {},
-  created() {},
-};
+export default {};
 </script>
+<style lang=""></style>

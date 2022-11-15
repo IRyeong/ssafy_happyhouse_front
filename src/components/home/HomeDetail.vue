@@ -1,8 +1,10 @@
-<template></template>
+<template>
+  <div></div>
+</template>
 <script>
-import {} from "vuex";
+import {} from 'vuex';
 export default {
-  name: "HomeDetail",
+  name: 'HomeDetail',
   methods: {},
   computed: {},
   created() {},

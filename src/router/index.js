@@ -1,75 +1,43 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import LoginForm from '@/components/LoginForm.vue';
+import User from '../views/UserView.vue';
+import UserUpdate from '@/components/user/UserUpdate.vue';
+import UserRegist from '@/components/user/UserRegist.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "home",
+    path: '/',
+    name: 'home',
     component: HomeView,
   },
   {
-    path: "/login",
-    name: "Login",
+    path: '/login',
+    name: 'Login',
     component: LoginForm,
   },
   {
-    path: "/user",
+    path: '/user',
+    name: 'User',
     component: User,
-    children: [
-      {
-        path: "/regist",
-        name: "Regist",
-        component: UserRegist,
-      },
-      {
-        path: "/detail/:id",
-        name: "Detail",
-        component: UserDetail,
-      },
-      {
-        path: "/:id",
-        name: "Update",
-        component: UserUpdate,
-      },
-    ],
   },
   {
-    path: "/home",
-    component: Home,
-    children: [
-      {
-        path: "/detail/:aptName",
-        name: "Detail",
-        component: HomeDetail,
-      },
-      {
-        path: "/search/:dongCode",
-        name: "Search",
-        component: HomeSearch,
-      },
-      {
-        path: "/sido/:",
-        name: "Sido",
-        component: HomeSido,
-      },
-    ],
+    path: '/user/regist',
+    name: 'UserRegist',
+    component: UserRegist,
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: '/user/:id',
+    name: 'UserUpdate',
+    component: UserUpdate,
   },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });
