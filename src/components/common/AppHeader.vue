@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: 'HeaderView',
+  name: 'AppHeader',
   data() {
     return {
       user: this.$store.state.user,
